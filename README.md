@@ -111,3 +111,106 @@ SELECT * FROM students ORDER BY age DESC;
 - sorting in desc- 
 SELECT * FROM students ORDER BY age ASC;
 ```
+![alt text](image-6.png)
+
+## 8-5 Data Filtering: WHERE Clause, Logical Operators, and Comparison Operators
+- Distinct check unique country 
+![alt text](image-7.png)
+![alt text](image-8.png)
+
+-- country base filtering
+``` sql
+SELECT * FROM students
+WHERE country='India';
+```
+![alt text](image-9.png)
+
+```sql
+-- select students with B grade in physics
+SELECT * FROM students
+WHERE grade='B' AND course = 'Physics';
+![alt text](image-10.png)
+```
+```sql
+-- select student from nepal or india
+SELECT * FROM students
+WHERE country='Nepal' OR country='India';
+![alt text](image-11.png)
+```
+```sql
+-- select student from nepal or india and age 22
+SELECT * FROM students
+WHERE( country='Nepal' OR country='India') AND age=22;
+```
+```sql
+-- select student from   age 22
+SELECT * FROM students
+WHERE age >=22;
+```
+```sql
+-- select student from   != Nepal not =
+SELECT * FROM students
+WHERE country != 'Nepal';
+SELECT * FROM students
+WHERE country <> 'Nepal';
+```
+## 8-6 Exploring Scalar and Aggregate Functions in PostgreSQL
+column uppercase and lowercase
+```sql
+SELECT upper(first_name)FROM students;
+SELECT lower (last_name)FROM students;
+```
+![alt text](image-12.png)
+-  concat
+![alt text](image-13.png)
+![alt text](image-14.png)
+## scaler function
+A Scalar Function in SQL is a function that takes one or more inputs and returns a single (scalar) value. It operates on each row individually and returns one value per row.
+
+🔹 String Functions
+
+| Function                        | Description                                | Example                             |
+| ------------------------------- | ------------------------------------------ | ----------------------------------- |
+| `UPPER(str)`                    | Converts string to uppercase               | `UPPER('munna') → 'MUNNA'`          |
+| `LOWER(str)`                    | Converts string to lowercase               | `LOWER('MUNNA') → 'munna'`          |
+| `LEN(str)` / `LENGTH(str)`      | Returns the length of the string           | `LEN('Hello') → 5`                  |
+| `SUBSTRING(str, start, length)` | Extracts part of a string                  | `SUBSTRING('abcdef', 2, 3) → 'bcd'` |
+| `TRIM(str)`                     | Removes leading and trailing spaces        | `TRIM('  Munna  ') → 'Munna'`       |
+| `REPLACE(str, from, to)`        | Replaces part of string with another value | `REPLACE('abc', 'a', 'z') → 'zbc'`  |
+
+
+
+🔹 Numeric Functions
+| Function      | Description                       | Example                    |
+| ------------- | --------------------------------- | -------------------------- |
+| `ABS(x)`      | Returns absolute value            | `ABS(-10) → 10`            |
+| `CEILING(x)`  | Rounds up to nearest integer      | `CEILING(4.2) → 5`         |
+| `FLOOR(x)`    | Rounds down to nearest integer    | `FLOOR(4.8) → 4`           |
+| `ROUND(x, d)` | Rounds number to d decimal places | `ROUND(3.14159, 2) → 3.14` |
+| `POWER(x, y)` | Raises x to the power of y        | `POWER(2, 3) → 8`          |
+| `SQRT(x)`     | Returns square root               | `SQRT(25) → 5` 
+            |
+🔹 Date/Time Functions
+| Function               | Description                                | Example                               |
+| ---------------------- | ------------------------------------------ | ------------------------------------- |
+| `GETDATE()` / `NOW()`  | Returns current date and time              | `GETDATE() → 2025-05-18 12:30:00`     |
+| `DATEPART(part, date)` | Returns part of a date (year, month, etc.) | `DATEPART(YEAR, '2025-05-18') → 2025` |
+| `DAY(date)`            | Extracts day from date                     | `DAY('2025-05-18') → 18`              |
+| `MONTH(date)`          | Extracts month                             | `MONTH('2025-05-18') → 5`             |
+| `YEAR(date)`           | Extracts year                              | `YEAR('2025-05-18') → 2025`           |
+
+![alt text](image-16.png)
+
+![alt text](image-15.png)
+## aggregate function
+What is an Aggregate Function?
+An Aggregate Function in SQL performs a calculation on a set of values and returns a single summary value. Unlike scalar functions (which work row by row), aggregate functions work on groups of rows — often used with GROUP BY.
+| Function  | Description             | Example       |
+| --------- | ----------------------- | ------------- |
+| `COUNT()` | Counts rows             | `COUNT(*)`    |
+| `SUM()`   | Adds up numeric values  | `SUM(salary)` |
+| `AVG()`   | Calculates average      | `AVG(price)`  |
+| `MAX()`   | Finds the maximum value | `MAX(age)`    |
+| `MIN()`   | Finds the minimum value | `MIN(score)`  |
+
+![alt text](image-17.png)
