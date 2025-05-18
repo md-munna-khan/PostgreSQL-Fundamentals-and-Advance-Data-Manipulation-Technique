@@ -35,6 +35,8 @@ INSERT INTO students (
 ('Nila', 'Parvin', 22, 'A+', 'English', 'nila.parvin20@example.com', '2003-12-08', 'A+', 'Nepal');
 
 
+SELECT age FROM students;
+
 SELECT email as "Student Email",age as "Student Age" FROM students;
 
-SELECT * FROM students ORDER BY age DESC;
+SELECT * FROM students ORDER BY age ASC;
