@@ -228,3 +228,35 @@ If the email is NOT NULL, it will return the actual email.
 
 If the email is NULL, it will return 'Email not Provided' instead.
 ![alt text](image-20.png)
+
+## 8-8 Exploring IN, BETWEEN, LIKE, and ILIKE Operators in PostgreSQL.
+- multiple or you Manage Shortcut In use case
+```sql
+SELECT * FROM students WHERE country ='India' OR  country ='Nepal' OR country = 'Pakistan';
+SELECT * FROM students WHERE country IN('Nepal','Pakistan');-- shortcut
+SELECT * FROM students WHERE country NOT IN('Nepal','Pakistan');
+```
+```sql
+--- use Between
+SELECT * FROM students 
+WHERE age BETWEEN 20 and 22;
+
+SELECT * FROM students 
+WHERE dob BETWEEN '2001-01-01' and '2003-01-01';
+```
+```sql
+-- use like just check first word or last word
+SELECT * FROM students 
+WHERE first_name LIKE ('%il')
+![alt text](image-21.png)
+SELECT * FROM students 
+WHERE first_name LIKE ('A%')
+-- use under score
+SELECT * FROM students 
+WHERE first_name LIKE ('_i%')
+![alt text](image-22.png)
+-- case insensative
+SELECT * FROM students 
+WHERE first_name ILIKE ('a%')
+![alt text](image-23.png)
+```

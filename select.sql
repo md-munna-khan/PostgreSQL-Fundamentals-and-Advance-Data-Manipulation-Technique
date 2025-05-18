@@ -84,3 +84,18 @@ WHERE email IS NULL;
 SELECT email FROM students
 
 SELECT COALESCE(email,'Email not Provided')FROM students;
+
+SELECT * FROM students 
+WHERE country ='India' OR  country ='Nepal' OR country = 'Pakistan';
+-----shortcut or use in
+SELECT * FROM students 
+WHERE country NOT IN('Nepal','Pakistan');
+--- use Between
+SELECT * FROM students 
+WHERE dob BETWEEN '2001-01-01' and '2004-01-01' ORDER BY dob;
+-- use like
+SELECT * FROM students 
+WHERE first_name LIKE ('_i%')
+
+SELECT * FROM students 
+WHERE first_name ILIKE ('a%')
