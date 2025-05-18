@@ -35,3 +35,15 @@ alter COLUMN user_age set not NULL;
 ## Drop in column
 alter Table person2
 alter COLUMN user_age DROP not NULL;
+
+## 8-3 Different Methods to Alter Tables For Primary key, Unique etc
+```sql
+- add constraint and drop 
+ alter Table person2
+add constraint unique_person2_user_age UNIQUE(user_age) ; 
+alter Table person2
+drop constraint unique_person2_user_age ;  
+![alt text](image-5.png)
+```
+- truncate if you want   all row  data deleted use truncate
+![alt text](image-4.png)
