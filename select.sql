@@ -99,3 +99,18 @@ WHERE first_name LIKE ('_i%')
 
 SELECT * FROM students 
 WHERE first_name ILIKE ('a%')
+
+--- limit---
+SELECT * FROM students LIMIT 10 OFFSET 2;
+--- offset first 2 id cancel 
+SELECT * FROM students LIMIT 10 OFFSET 2;
+---- pagination----------
+SELECT * FROM students LIMIT 5 OFFSET 5 * 0;
+SELECT * FROM students LIMIT 5 OFFSET 5 * 1;
+SELECT * FROM students LIMIT 5 OFFSET 5 * 2;
+
+----- Delete ----------
+SELECT * FROM students WHERE grade='B-';
+
+DELETE from students
+WHERE grade = 'B-' AND country='Nepal';

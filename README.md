@@ -260,3 +260,31 @@ SELECT * FROM students
 WHERE first_name ILIKE ('a%')
 ![alt text](image-23.png)
 ```
+
+## 8-9 Pagination with Limit Offset and Data Deletion in PostgreSQL
+```sql
+--- use Limit
+SELECT * FROM students LIMIT 5;
+--- offset first 2 id cancel 
+SELECT * FROM students LIMIT 10 OFFSET 2;
+```
+```sql
+---- pagination----------
+SELECT * FROM students LIMIT 5 OFFSET 5 * 0;
+SELECT * FROM students LIMIT 5 OFFSET 5 * 1;
+SELECT * FROM students LIMIT 5 OFFSET 5 * 2;
+```
+```sql
+
+----- Delete ----------
+DELETE from students;
+---- use where for be careful
+DELETE from students
+WHERE grade = 'B'
+
+----- Delete ----------
+SELECT * FROM students WHERE grade='B-';
+
+DELETE from students
+WHERE grade = 'B-' AND country='Nepal';
+```
