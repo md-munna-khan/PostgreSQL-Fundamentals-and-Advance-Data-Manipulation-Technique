@@ -58,3 +58,9 @@ SELECT * FROM students
 WHERE country != 'Nepal';
 SELECT * FROM students
 WHERE country <> 'Nepal';
+-- scalar function
+SELECT length(last_name)FROM students;
+
+-- aggregate function
+SELECT count(*) FROM students;
+SELECT max(length (first_name)) FROM students;
