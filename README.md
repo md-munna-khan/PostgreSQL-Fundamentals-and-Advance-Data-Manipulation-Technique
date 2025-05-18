@@ -214,3 +214,17 @@ An Aggregate Function in SQL performs a calculation on a set of values and retur
 | `MIN()`   | Finds the minimum value | `MIN(score)`  |
 
 ![alt text](image-17.png)
+## 8-7 Logical Negation NOT, understanding NULL and the Null-Coalescing Operator in PostgreSQL
+![alt text](image-18.png)
+![alt text](image-19.png)
+
+## 🔍 What does COALESCE() do?
+The COALESCE() function returns the first non-null value from the list of values provided.
+
+📌 In Your Query:
+You're selecting the email column from the students table.
+
+If the email is NOT NULL, it will return the actual email.
+
+If the email is NULL, it will return 'Email not Provided' instead.
+![alt text](image-20.png)
