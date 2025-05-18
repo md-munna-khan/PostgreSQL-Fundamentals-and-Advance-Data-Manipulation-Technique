@@ -111,3 +111,46 @@ SELECT * FROM students ORDER BY age DESC;
 - sorting in desc- 
 SELECT * FROM students ORDER BY age ASC;
 ```
+![alt text](image-6.png)
+
+## 8-5 Data Filtering: WHERE Clause, Logical Operators, and Comparison Operators
+- Distinct check unique country 
+![alt text](image-7.png)
+![alt text](image-8.png)
+
+-- country base filtering
+``` sql
+SELECT * FROM students
+WHERE country='India';
+```
+![alt text](image-9.png)
+
+```sql
+-- select students with B grade in physics
+SELECT * FROM students
+WHERE grade='B' AND course = 'Physics';
+![alt text](image-10.png)
+```
+```sql
+-- select student from nepal or india
+SELECT * FROM students
+WHERE country='Nepal' OR country='India';
+![alt text](image-11.png)
+```
+```sql
+-- select student from nepal or india and age 22
+SELECT * FROM students
+WHERE( country='Nepal' OR country='India') AND age=22;
+```
+```sql
+-- select student from   age 22
+SELECT * FROM students
+WHERE age >=22;
+```
+```sql
+-- select student from   != Nepal not =
+SELECT * FROM students
+WHERE country != 'Nepal';
+SELECT * FROM students
+WHERE country <> 'Nepal';
+```
