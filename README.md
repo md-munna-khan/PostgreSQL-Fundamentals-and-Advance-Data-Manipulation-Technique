@@ -214,3 +214,77 @@ An Aggregate Function in SQL performs a calculation on a set of values and retur
 | `MIN()`   | Finds the minimum value | `MIN(score)`  |
 
 ![alt text](image-17.png)
+## 8-7 Logical Negation NOT, understanding NULL and the Null-Coalescing Operator in PostgreSQL
+![alt text](image-18.png)
+![alt text](image-19.png)
+
+## 🔍 What does COALESCE() do?
+The COALESCE() function returns the first non-null value from the list of values provided.
+
+📌 In Your Query:
+You're selecting the email column from the students table.
+
+If the email is NOT NULL, it will return the actual email.
+
+If the email is NULL, it will return 'Email not Provided' instead.
+![alt text](image-20.png)
+
+## 8-8 Exploring IN, BETWEEN, LIKE, and ILIKE Operators in PostgreSQL.
+- multiple or you Manage Shortcut In use case
+```sql
+SELECT * FROM students WHERE country ='India' OR  country ='Nepal' OR country = 'Pakistan';
+SELECT * FROM students WHERE country IN('Nepal','Pakistan');-- shortcut
+SELECT * FROM students WHERE country NOT IN('Nepal','Pakistan');
+```
+```sql
+--- use Between
+SELECT * FROM students 
+WHERE age BETWEEN 20 and 22;
+
+SELECT * FROM students 
+WHERE dob BETWEEN '2001-01-01' and '2003-01-01';
+```
+```sql
+-- use like just check first word or last word
+SELECT * FROM students 
+WHERE first_name LIKE ('%il')
+![alt text](image-21.png)
+SELECT * FROM students 
+WHERE first_name LIKE ('A%')
+-- use under score
+SELECT * FROM students 
+WHERE first_name LIKE ('_i%')
+![alt text](image-22.png)
+-- case insensative
+SELECT * FROM students 
+WHERE first_name ILIKE ('a%')
+![alt text](image-23.png)
+```
+
+## 8-9 Pagination with Limit Offset and Data Deletion in PostgreSQL
+```sql
+--- use Limit
+SELECT * FROM students LIMIT 5;
+--- offset first 2 id cancel 
+SELECT * FROM students LIMIT 10 OFFSET 2;
+```
+```sql
+---- pagination----------
+SELECT * FROM students LIMIT 5 OFFSET 5 * 0;
+SELECT * FROM students LIMIT 5 OFFSET 5 * 1;
+SELECT * FROM students LIMIT 5 OFFSET 5 * 2;
+```
+```sql
+
+----- Delete ----------
+DELETE from students;
+---- use where for be careful
+DELETE from students
+WHERE grade = 'B'
+
+----- Delete ----------
+SELECT * FROM students WHERE grade='B-';
+
+DELETE from students
+WHERE grade = 'B-' AND country='Nepal';
+```
