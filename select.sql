@@ -1,56 +1,3 @@
-## PostgreSQL Fundamentals and Advance Data Manipulation Technique
-
-## 8-1 Using the ALTER Keyword to Modify Tables and Setting Up PostgreSQL in VS Code\
-![alt text](image.png)
-- if you run your psql on vs code create a file like test.sql then query your code
-![alt text](image-1.png)
-
-## 8-2 Expanding on the ALTER Keyword for Table Modification
-![alt text](image-3.png)
--- Active: 1747415487712@@localhost@5432@ph
-
-- SELECT * FROM person2;
-
-## Add column
-ALTER TABLE person2
-ADD COLUMN email VARCHAR(30) NOT NULL DEFAULT 'default@gmail.com';
-
-## Insert in column
-INSERT INTO person2 VALUES(9,'mojnu',48,'mojnu@gamil.com')
-## Drop in column
-ALTER TABLE person2
-DROP COLUMN email
-
-
-## Rename in column
-alter Table person2
-RENAME COLUMN age to user_age;
-
-## Change type in column
-alter Table person2
-alter COLUMN user_name type VARCHAR(50)
-## Set Constrain in column
-alter Table person2
-alter COLUMN user_age set not NULL;
-## Drop in column
-alter Table person2
-alter COLUMN user_age DROP not NULL;
-
-## 8-3 Different Methods to Alter Tables For Primary key, Unique etc
-```sql
-- add constraint and drop 
- alter Table person2
-add constraint unique_person2_user_age UNIQUE(user_age) ; 
-alter Table person2
-drop constraint unique_person2_user_age ;  
-![alt text](image-5.png)
-```
-- truncate if you want   all row  data deleted use truncate
-![alt text](image-4.png)
-## 8-4 Mastering SELECT Queries: Column Aliasing and Result Ordering in PostgreSQL
-
-#### create table 
-```sql 
 CREATE Table students(
     student_id SERIAL PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
@@ -63,9 +10,6 @@ CREATE Table students(
     blood_group VARCHAR(50),
     country VARCHAR(50)
 );
-```
-### insert values in table 
-```sql 
 INSERT INTO students (
     first_name, last_name, age, grade, course, email, dob, blood_group, country
 ) VALUES
@@ -90,24 +34,9 @@ INSERT INTO students (
 ('Sajid', 'Ullah', 20, 'A', 'Math', 'sajid.ullah19@example.com', '2005-05-23', 'O+', 'Bangladesh'),
 ('Nila', 'Parvin', 22, 'A+', 'English', 'nila.parvin20@example.com', '2003-12-08', 'A+', 'Nepal');
 
-```
-``` sql
-- select one column 
+
 SELECT age FROM students;
-```
-``` sql
-- select multiple column one column 
-SELECT age,email,first_name FROM students;
-```
-``` sql
-- select change any columns column name- 
+
 SELECT email as "Student Email",age as "Student Age" FROM students;
-```
-``` sql
-- sorting in desc- 
-SELECT * FROM students ORDER BY age DESC;
-```
-``` sql
-- sorting in desc- 
+
 SELECT * FROM students ORDER BY age ASC;
-```
