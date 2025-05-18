@@ -288,3 +288,13 @@ SELECT * FROM students WHERE grade='B-';
 DELETE from students
 WHERE grade = 'B-' AND country='Nepal';
 ```
+
+## 8-10 Understanding and Using the UPDATE Operator in PostgreSQL
+
+```sql
+--- update rows-------
+UPDATE students
+set email='defalt@gmail.com' 
+WHERE student_id=244
+
+```

@@ -114,3 +114,10 @@ SELECT * FROM students WHERE grade='B-';
 
 DELETE from students
 WHERE grade = 'B-' AND country='Nepal';
+
+--- update rows-------
+UPDATE students
+set email='defalt@gmail.com', age =30
+WHERE student_id=244
+
+SELECT * FROM students;
