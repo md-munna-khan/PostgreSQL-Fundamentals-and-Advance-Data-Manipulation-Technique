@@ -120,4 +120,4 @@ UPDATE students
 set email='defalt@gmail.com', age =30
 WHERE student_id=244
 
-SELECT * FROM students;
+

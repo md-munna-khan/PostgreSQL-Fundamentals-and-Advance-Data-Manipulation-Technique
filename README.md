@@ -298,3 +298,13 @@ set email='defalt@gmail.com'
 WHERE student_id=244
 
 ```
+
+## practice task
+https://docs.google.com/document/d/1yxfMf68CPgHahza6aAkL_eauCsNeoEc9uwbHPNuR-RM/edit?tab=t.0#heading=h.5d5tg2ja1d4k
+@everyone Time to Practice and Level Up!  ⚡
+
+Based on yesterday’s module, we’ve prepared some essential practice tasks just for you. Completing these will sharpen your skills and boost your confidence! 💪
+
+📂 Grab your practice tasks here:
+https://docs.google.com/document/d/1yxfMf68CPgHahza6aAkL_eauCsNeoEc9uwbHPNuR-RM/edit?usp=sharing 
+
